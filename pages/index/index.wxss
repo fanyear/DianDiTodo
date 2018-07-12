@@ -1,0 +1,64 @@
+/**index.wxss**/
+@import "task/task.wxss";
+
+.header-box {
+    margin-left: 50rpx;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx;
+}
+
+.header-time {
+    font-size: 28rpx;
+}
+
+.header-hi {
+    font-size: 66rpx;
+}
+
+
+.add-btn {
+    font-size: 136rpx;
+    position: fixed;
+    left: 50%;
+    bottom: 0rpx;
+     transform: translateX(-50%) translateY(-50%); 
+}
+
+.info-btn {
+    font-size:60rpx;
+    position:fixed;
+    right:15%;
+    bottom:118rpx;
+}
+
+.type-btn {
+    font-size: 54rpx;
+    position: fixed;
+    left: 15%;
+    bottom: 121rpx;
+}
+
+.add-btn::after {
+    content: '';
+    display: block;
+    width: 80rpx;
+    height: 80rpx;
+    background: #fff;
+    position: absolute;
+    top: 30rpx;
+    left: 30rpx;
+    z-index: -9;
+}
+
+.type-btn::after, .info-btn::after {
+    content: '';
+    display: block;
+    width: 36rpx;
+    height: 44rpx;
+    background: #fff;
+    position: absolute;
+    top: 12rpx;
+    left: 10rpx;
+     z-index: -9; 
+    border-radius: 100%;
+}

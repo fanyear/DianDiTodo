@@ -1,0 +1,33 @@
+/* pages/sort/sort.wxss */
+@import "/assets/iconfont/iconfont";
+@import "/app";
+
+.sort-frame {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sort-box {
+    display: inline-block;
+    width: 25%;
+    padding: 10rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.content {
+    height: 100rpx;
+    background: #e7e7e7;
+    line-height: 100rpx;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+    transform: translateY(-50%) translateX(50%);
+    font-size:40rpx;
+}

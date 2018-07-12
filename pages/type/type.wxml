@@ -1,0 +1,15 @@
+<!--pages/type/type.wxml-->
+<view>
+    <view class="header">
+        <view class="header-box">
+            <view class="header-hi color-theme">{{taskType}}</view>
+            <view class="header-time color-dark"></view>
+        </view>
+    </view>
+    <view class="container">
+         <task update="{{update}}" task-type="{{taskType}}" /> 
+    </view>
+    <text class="color-dark type-btn iconfont icon-type" bindtap="selctType"></text>
+    <text class="color-theme add-btn iconfont icon-add" bindtap="add"></text>
+    <text class="color-dark info-btn iconfont icon-info" bindtap="about"></text>
+</view>

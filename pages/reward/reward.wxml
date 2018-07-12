@@ -1,0 +1,2 @@
+<!--pages/reward/reward.wxml-->
+<image class="img" bindtap="previewImage" src="{{src}}" mode='scaleToFill'></image>

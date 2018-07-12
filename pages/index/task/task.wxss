@@ -1,0 +1,105 @@
+/* pages/index/task/task.wxss */
+@import "/assets/iconfont/iconfont";
+@import "/app";
+
+.task-page {
+    margin-bottom: 360rpx;
+}
+
+.icon-frame {
+    margin-top: 12rpx;
+}
+
+.task-cell {
+    height: 112rpx;
+    width: 1600rpx;
+}
+
+.task-frame {
+    overflow: hidden;
+}
+
+.task-box {
+    /* padding-right: 50rpx;
+    padding-left: 50rpx;
+    padding-bottom: 50rpx; */
+    display: inline-block;
+    vertical-align: middle;
+    height: 112rpx;
+    position: relative;
+    width: 130rpx;
+}
+
+.task-content {
+    /* margin-left: 50rpx; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* width: 720rpx; */
+    padding-top: 20rpx;
+    margin-left: 0rpx;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 580rpx;
+    margin-right: 70rpx;
+}
+
+.task-detail {
+    font-size: 26rpx;
+    margin-top: 2rpx;
+    margin-bottom: 10rpx;
+    height: 34rpx;
+}
+
+.task-control-frame {
+    display: inline-block;
+    width: 200rpx;
+    position: relative;
+    vertical-align: middle;
+    height: 112rpx;
+}
+
+.task-control {
+    height: 112rpx;
+    display: inline-block;
+    width: 100rpx;
+}
+
+.task-control-delete {
+    height: 112rpx;
+    display: inline-block;
+    width: 200rpx;
+}
+
+.task-control-icon {
+    font-size: 40rpx;
+    /* margin-right: 150rpx; */
+}
+
+.col-4 + .col-4 {
+    border-left: 4rpx solid #fff;
+}
+
+.line-trougth {
+    text-decoration: line-through;
+}
+
+.task-control-icon {
+    display: inline-block;
+    margin-top: 12rpx;
+}
+
+.more-text {
+    margin-right: 123rpx;
+}
+
+.finished-text {
+    display: inline-block;
+    width: 200rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.clear-text {
+}

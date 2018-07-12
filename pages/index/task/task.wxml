@@ -1,0 +1,90 @@
+<!--pages/index/task/task.wxml-->
+<view class='task-page'>
+    <block wx:for="{{unfinishedList}}" wx:for-item="task" wx:key="taskId">
+        <view class='task-frame'>
+            <view class="task-cell" animation="{{task.taskAnimation}}">
+            <!-- catchtap="tapTask" data-task-id="{{task.taskId}}" data-done="{{false}}"-->
+            <!-- style='margin-left:{{left}}rpx' catchtouchstart="touchstart" catchtouchmove="touchmove" catchtouchend="touchend" -->
+                <view class="task-box x-center" style='left:{{task.XAnimation.XPos}}rpx' bindtap="finishTask" data-task-id="{{task.taskId}}">
+                    <view class='icon-frame'>
+                        <text class="color-theme iconfont icon-select-4"></text>
+                    </view>
+                </view>
+                <!-- bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchcancel="touchend" bindtouchend="touchend" -->
+                <view class="task-content" style='left:{{task.XAnimation.XPos}}rpx' bindtap='toggleX' data-task-id="{{task.taskId}}" data-done="{{false}}" animation="{{task.XAnimation.animation}}" >
+                    <text>{{task.content}}</text>
+                    <view class="task-detail color-dark">
+                        <view wx:if="{{task.taskType}}" style="display:inline-block;margin-right:10rpx;">
+                            #{{task.taskType}}
+                        </view>
+                        <view wx:if="{{task.time}}" style="display:inline-block;">
+                            <text class="iconfont icon-reminder"></text> 
+                            <text wx:if="{{dateObj[task.date]}}">{{dateObj[task.date]}}</text>
+                            <text wx:else>{{task.shortDate}}</text>
+                            {{task.time}}
+                        </view>
+                    </view>
+                </view>
+                <view class='task-control-frame' style='left:{{task.XAnimation.XPos}}rpx'>
+                    <view class="task-control x-center color-theme" catchtap="editTask" data-task-id="{{task.taskId}}">
+                        <view class='task-control-icon'>
+                            <text class="task-control-icon iconfont icon-edit"></text>
+                        </view>
+                        <!-- <view class="col-4 x-center" catchtap="reminderTask" data-task-id="{{task.taskId}}">
+                            <text class="task-control-icon iconfont icon-reminder"></text>
+                        </view> -->
+                    </view>
+                    <view class="task-control x-center color-theme" catchtap="deleteUnfinishedTask" data-task-id="{{task.taskId}}" data-done="{{false}}">
+                        <view class='task-control-icon'>
+                            <text class="task-control-icon iconfont icon-delete"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:for="{{finishedList}}" wx:for-item="task" wx:key="taskId" wx:for-index="index">
+        <view wx:if="{{index < finishedMax}}" class='task-frame'>
+            <view class="task-cell" animation="{{task.taskAnimation}}">
+                <view class="task-box x-center" style='left:{{task.XAnimation.XPos}}rpx'  catchtap="unfinishTask" data-task-id="{{task.taskId}}">
+                    <view class='icon-frame'>
+                        <text class="color-dark iconfont icon-confirm"></text>
+                    </view>
+                </view>
+                <!-- bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchcancel="touchend" bindtouchend="touchend" -->
+                <view class="task-content" style='left:{{task.XAnimation.XPos}}rpx' bindtap='toggleX' data-task-id="{{task.taskId}}" data-done="{{true}}" animation="{{task.XAnimation.animation}}">
+                    <text class="color-dark line-trougth">{{task.content}}</text>
+                    <view class="task-detail color-dark line-trougth">
+                        <view wx:if="{{task.taskType}}" style="display:inline-block;margin-right:10rpx;">
+                                #{{task.taskType}}
+                        </view>
+                        <view wx:if="{{task.time}}" style="display:inline-block;">
+                            <text class="iconfont icon-reminder"></text> 
+                            <text wx:if="{{dateObj[task.date]}}">{{dateObj[task.date]}}</text>
+                            <text wx:else>{{task.shortDate}}</text>
+                            {{task.time}}
+                        </view>
+                    </view>
+                </view>
+                <!-- <view class="task-control bg-dark color-theme row">
+                    <view class="col">
+                        <view class="col-12 x-center" catchtap="deleteTask" data-task-id="{{task.taskId}}" data-done="{{true}}">
+                            <text class="task-control-icon iconfont icon-delete"></text>
+                        </view>
+                    </view>
+                </view> -->
+                <view class='task-control-frame' style='left:{{task.XAnimation.XPos}}rpx'>
+                    <view class="task-control-delete x-center color-dark" catchtap="deleteTask" data-task-id="{{task.taskId}}" data-done="{{true}}">
+                        <view class='task-control-icon'>
+                            <text class="task-control-icon iconfont icon-delete"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block> 
+    <view class='more x-center'>
+        <view wx:if="{{finishedMax < finishedList.length}}" catchtap="addMoreFinished" class='finished-text more-text x-center color-dark'>查看更多</view>
+        <view wx:if="{{5 < finishedList.length}}" catchtap="confirmClearFinishedData" class='finished-text clear-text x-center color-dark'>一键清空</view>
+    </view>
+</view>

@@ -1,0 +1,21 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/about/about",
+        "pages/add/add",
+        "pages/reward/reward",
+        "pages/type/type"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "点滴待办",
+        "navigationBarTextStyle": "black"
+    },
+    "plugins": {
+        "sdkPlugin": {
+            "version": "1.4.0",
+            "provider": "wxc6b86e382a1e3294"
+        }
+    }
+}

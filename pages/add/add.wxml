@@ -1,0 +1,59 @@
+<!--pages/add/add.wxml-->
+
+<view class='add-container container'>
+    <form bindsubmit="formSubmit" report-submit="{{true}}">
+        <view class='add-form'>
+            <view class="form-item task-content">
+                <input class='add-input' name="content" value="{{content}}" placeholder="输入待办事项名称" focus="{{focus}}" bindinput="inputHandle"/>
+                <view wx:if="{{contentValue}}" class='delete-content x-center'>
+                    <text class="delete-btn color-dark iconfont icon-delete-1" bindtap="deleteContent"></text>
+                </view>
+            </view>
+            <view class="form-item">
+                <view class='item-header color-dark'>
+                    类型（非必选）
+                     <!-- <text class="color-dark" style="float:right;margin-right:10rpx">编辑</text>  -->
+                    <!-- <text class="color-theme" style="float:right;margin-right:10rpx">完成</text> -->
+                </view>
+                <view class='form-content row'>
+                    <view class='col'>
+                        <view wx:for="{{typeList}}" wx:key="{{index}}" wx:for-index="index" bindtap="selectType" class="col-3 x-center type-item {{item.select}}" data-index="{{index}}">
+                            {{item.content}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!-- <view class='form-item'>
+                <sort/>
+            </view> -->
+            <view class="form-item">
+                <view class='item-header color-dark reminder-header'>
+                    提醒时间
+                    <switch name="switch" color="#65c0ba" style="float:right" checked="{{reminderSwitch}}" bindchange="switchChange" />
+                </view>
+                <view class='form-content reminder-content color-theme' animation="{{timeAnimation}}">
+                    <picker name="time" mode="multiSelector" range="{{timeRange}}" value="{{timeSelect}}" bindchange="bindTimeChange">
+                        <view class="time-picker">
+                            {{time}}
+                        </view>
+                    </picker>
+                    <!-- <picker name="date" mode="date" value="{{date}}" start="{{minDate}}" end="{{maxDate}}" bindchange="bindDateChange">
+                        <view class="date-picker">
+                            {{date}}
+                        </view>
+                    </picker> -->
+                    <picker name="date" mode="selector" value="{{selectIndex}}" range="{{dateList}}" range-key="label" bindchange="bindSelectDateChange">
+                        <view class="date-picker">
+                            {{dateList[selectIndex].label}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="footer">
+             <button formType="submit" class='submit-btn'>
+                <text class="color-theme add-btn iconfont icon-confirm"></text>
+            </button> 
+        </view>
+    </form>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/about/about.wxml-->
+<view class='about-container container'>
+    <view class='about-header'>
+        <text class="color-theme header-icon iconfont icon-confirm"></text>
+    </view>
+    <view class='title x-center color-theme'>- 关于点滴待办 -</view>
+    <view>
+        <view class='parag color-dark'>本小程序专注于<text class='color-theme'>管理您的待办事项</text>，支持待办事项的<text class='color-theme'>新增</text>，
+        <text class='color-theme'>编辑</text>，<text class='color-theme'>删除</text>，<text class='color-theme'>提醒</text>以及<text class='color-theme'>分类查看</text>等功能。</view>
+        <view class='parag color-dark'>注意：本小程序使用<text class='color-theme'>本地数据存储</text>，因此<text class='color-theme'>清空缓存</text>后，<text class='color-theme'>数据</text>将会<text class='color-theme'>丢失</text>，请慎重清理！</view>
+        <view class='parag color-dark'><text class='color-theme'>反馈或合作</text>请联络<text class='color-theme'> isluof@163.com</text></view>
+    </view>
+    <!-- <view class="clear-btn color-dark" bindtap="confirm">清空已完成事项</view> -->
+    <!-- <text class='reward color-white x-center' bindtap="reward">打赏一下</text> -->
+</view>
+<view class='share-btn-frame'>
+        <button class="share-btn" style="color:#65c0ba;border-color:#65c0ba" plain="{{true}}" type="default" open-type="share" >分享给朋友</button>
+</view>

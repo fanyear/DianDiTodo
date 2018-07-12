@@ -1,0 +1,19 @@
+<!--pages/sort/sort.wxml-->
+<view class='sort-frame' wx:if="{{edit}}">
+    <view class='sort-box'>
+        <view class='content x-center'>123</view>
+        <text class="delete-btn color-red iconfont icon-delete-1"></text>
+    </view>
+    <view class='sort-box'>
+        <view class='content x-center'>123</view>
+        <text class="delete-btn color-red iconfont icon-delete-1"></text>
+    </view>
+    <view class='sort-box'>
+        <view class='content x-center'>123</view>
+        <text class="delete-btn color-red iconfont icon-delete-1"></text>
+    </view>
+    <view class='sort-box'>
+        <view class='content x-center'>123</view>
+        <text class="delete-btn color-red iconfont icon-delete-1"></text>
+    </view>
+</view>

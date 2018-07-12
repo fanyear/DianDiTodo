@@ -1,0 +1,6 @@
+/* pages/reward/reward.wxss */
+
+.img {
+    width: 100%;
+    height: 800rpx;
+}
